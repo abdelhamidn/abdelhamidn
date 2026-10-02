@@ -186,7 +186,7 @@
 <!-- SKILLS:END -->
 
 <img src="assets/prompt-whoami-v2.svg" alt="abdelhamidn@github ~ $ whoami" width="100%"/>
-<img src="assets/whoami-v1.svg" alt="ASCII portrait of Abdelhamid and a rotating 3D ANO wordmark, each in a terminal window" width="100%"/>
+<img src="assets/whoami-v2.svg" alt="Rotating 3D ANO wordmark in a terminal window" width="100%"/>
 
 
 <br/>
