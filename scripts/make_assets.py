@@ -41,7 +41,7 @@ def prompt_svg(command, width=860, chars_per_sec=12):
            f"@keyframes cur{{from{{transform:translateX(0)}}to{{transform:translateX({tw:.1f}px)}}}}"
            "@keyframes blink{50%{opacity:0}}"
            f".t{{animation:type {dur:.1f}s steps({n}) forwards;width:0}}"
-           f".c{{animation:cur {dur:.1f}s steps({n}) forwards,blink 1s step-end infinite}}")
+           f".c{{animation:cur {dur:.1f}s steps({n}) forwards,blink 1s step-end 8}}")
     body = f'''<style>{css}</style>
 <rect width="{width}" height="56" fill="{BG}"/>
 <clipPath id="c"><rect class="t" x="{x0:.1f}" y="10" height="36"/></clipPath>
@@ -70,17 +70,16 @@ def heatmap_svg(cells, total):
                 out.append(f'<text x="{left + col * (size + gap)}" y="22" font-size="11" fill="{MUTED}">{name}</text>')
     for label, r in (("Mon", 1), ("Wed", 3), ("Fri", 5)):
         out.append(f'<text x="8" y="{top + r * (size + gap) + 10}" font-size="11" fill="{MUTED}">{label}</text>')
-    css = ("@keyframes in{from{opacity:0}to{opacity:1}}"
-           "@keyframes wave{0%,100%{opacity:1}50%{opacity:.4}}"
-           "rect.d{opacity:0;animation:in .5s forwards}"
-           "rect.a{animation:in .5s forwards,wave 3s ease-in-out infinite}")
+    css = "@keyframes in{from{opacity:0}to{opacity:1}}g.k{opacity:0;animation:in .5s forwards}@media (prefers-reduced-motion:reduce){g.k{animation:none;opacity:1}}"
     out.insert(0, f"<style>{css}</style>")
+    columns = {}
     for d, row, col, lvl in cells:
         x, y = left + col * (size + gap), top + row * (size + gap)
         fill = EMPTY if lvl == 0 else LEVELS[lvl - 1]
-        delay = f"{col * 0.04:.2f}s"
-        style = f"animation-delay:{delay}" if lvl == 0 else f"animation-delay:{delay},{2.5 + col * 0.06:.2f}s"
-        out.append(f'<rect class="{"d" if lvl == 0 else "a"}" x="{x}" y="{y}" width="{size}" height="{size}" rx="2" fill="{fill}" style="{style}"><title>{d}</title></rect>')
+        columns.setdefault(col, []).append(
+            f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="2" fill="{fill}"><title>{d}</title></rect>')
+    for col in sorted(columns):
+        out.append(f'<g class="k" style="animation-delay:{col * 0.04:.2f}s">{"".join(columns[col])}</g>')
     out.append(f'<text x="{left}" y="{h - 14}" font-size="13" font-weight="700" fill="#e6edf3">{total:,} contributions in the last year</text>')
     return svg_wrap(w, h, "".join(out))
 
@@ -109,7 +108,7 @@ def wordmark_svg(word="ABDELHAMIDN"):
             '<stop offset="1" stop-color="#6cb6ff"/></linearGradient>')
     mid = f"{cx} {h // 2}"
     body = (f'<rect width="{w}" height="{h}" fill="{BG}"/>'
-            f'<g><animateTransform attributeName="transform" type="rotate" values="-1 {mid};1 {mid};-1 {mid}" dur="5s" repeatCount="indefinite"/>'
+            f'<g><animateTransform attributeName="transform" type="rotate" values="0 {mid};-1.2 {mid};1.2 {mid};0 {mid}" dur="4s" repeatCount="3"/>'
             f'{layer(3, 3, "#0d4429")}{layer(0, 0, "url(#g)")}</g>')
     return svg_wrap(w, h, body, defs)
 
@@ -124,7 +123,6 @@ def main():
         "assets/prompt-contributions-v2.svg": prompt_svg("./contributions.sh"),
         "assets/prompt-links-v2.svg": prompt_svg("./links.sh"),
         "assets/prompt-skills-v2.svg": prompt_svg("./skills.sh"),
-        "assets/prompt-whoami-v2.svg": prompt_svg("whoami"),
     }
     for path, content in files.items():
         with open(path, "w", encoding="utf-8") as f:

@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="56" viewBox="0 0 860 56" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace"><defs></defs><style>@keyframes type{from{width:0}to{width:308.5px}}@keyframes cur{from{transform:translateX(0)}to{transform:translateX(304.5px)}}@keyframes blink{50%{opacity:0}}.t{animation:type 2.4s steps(29) forwards;width:0}.c{animation:cur 2.4s steps(29) forwards,blink 1s step-end infinite}</style>
-<rect width="860" height="56" fill="#22272e"/>
-<clipPath id="c"><rect class="t" x="277.8" y="10" height="36"/></clipPath>
-<text x="277.8" y="35" font-size="19" font-weight="700" fill="#adbac7" clip-path="url(#c)" xml:space="preserve"><tspan fill="#39d353">abdelhamidn@github</tspan> <tspan fill="#6cb6ff">~</tspan> <tspan fill="#768390">$</tspan> whoami</text>
-<rect class="c" x="277.8" y="16" width="10" height="24" fill="#39d353"/></svg>
