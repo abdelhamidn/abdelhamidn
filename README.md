@@ -16,7 +16,7 @@
 <a href="https://abdelhamid.noira.net"><img src="https://img.shields.io/badge/PORTFOLIO-ABDELHAMID.NOIRA.NET-1a73e8?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
 <a href="https://linkedin.com/in/abdelhamidn"><img src="https://img.shields.io/badge/LINKEDIN-ABDELHAMIDN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 <a href="https://github.com/abdelhamidn"><img src="https://img.shields.io/badge/GITHUB-ABDELHAMIDN-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-<a href="mailto:abdelhamid.noira@outlook.com"><img src="https://img.shields.io/badge/EMAIL-ABDELHAMID.NOIRA%40OUTLOOK.COM-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+<a href="mailto:abdelhamid@noira.net"><img src="https://img.shields.io/badge/EMAIL-ABDELHAMID%40NOIRA.NET-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
 
 <br/><br/>
 
