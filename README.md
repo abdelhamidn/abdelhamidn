@@ -13,18 +13,6 @@ Turning complex challenges into AI-powered, scalable solutions through multiclou
 
 ---
 
-### 🚀 About Me
-
-- 🛠️ Currently **DevOps Project Manager** at **Be Ys**, a French sovereign cloud ecosystem for regulated industries
-- 👨‍💻 Leading a 7-engineer team across sprints, CI/CD workflows, and incident response
-- ☁️ Building multi-cloud infrastructure with **Docker, Kubernetes, Terraform & Ansible**
-- 🤖 Engineering **agentic AI systems** — Copilot Studio agents, LangChain/LangGraph pipelines, RAG
-- 📊 Shipping real-time observability with **Grafana, Prometheus & Superset**
-- 🏆 Built a cross-browser AI extension that won a **$100K GCP Startups Program** award
-- 🌍 Based in Casablanca, Morocco — 🇲🇦 Arabic (native) · 🇬🇧 English · 🇫🇷 French
-
----
-
 ### 🧰 Tech Stack
 
 **Infrastructure & DevOps**
