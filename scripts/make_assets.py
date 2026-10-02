@@ -5,7 +5,7 @@ import urllib.request
 from datetime import date
 
 USER = "abdelhamidn"
-HANDLE = "ano"
+HANDLE = "abdelhamidn"
 BG, FG, MUTED = "#22272e", "#adbac7", "#768390"
 LEVELS = ["#0d4429", "#006d32", "#26a641", "#39d353"]  # level 1..4
 EMPTY = "#16402b"
@@ -36,7 +36,7 @@ def svg_wrap(w, h, body, defs=""):
 def prompt_svg(command, width=860, chars_per_sec=12):
     """`ano@github ~ $ command` typed out with a blinking cursor."""
     text = f"{HANDLE}@github ~ $ {command}"
-    cw = 11.4
+    cw = 10.5
     n = len(text)
     tw = n * cw
     dur = max(n / chars_per_sec, 1)
@@ -89,23 +89,32 @@ def heatmap_svg(cells, total):
     return svg_wrap(w, h, "".join(out))
 
 
-def wordmark_svg(word="ANO"):
+def wordmark_svg(word="ABDELHAMIDN"):
     font = {
-        "A": ["  ██  ", " ████ ", "██  ██", "██████", "██  ██", "██  ██"],
-        "N": ["██   ██", "███  ██", "████ ██", "██ ████", "██  ███", "██   ██"],
-        "O": [" ████ ", "██  ██", "██  ██", "██  ██", "██  ██", " ████ "],
+        "A": [" ███ ", "█   █", "█   █", "█████", "█   █", "█   █"],
+        "B": ["████ ", "█   █", "████ ", "█   █", "█   █", "████ "],
+        "D": ["████ ", "█   █", "█   █", "█   █", "█   █", "████ "],
+        "E": ["█████", "█    ", "████ ", "█    ", "█    ", "█████"],
+        "L": ["█    ", "█    ", "█    ", "█    ", "█    ", "█████"],
+        "H": ["█   █", "█   █", "█████", "█   █", "█   █", "█   █"],
+        "M": ["█   █", "██ ██", "█ █ █", "█   █", "█   █", "█   █"],
+        "I": ["█████", "  █  ", "  █  ", "  █  ", "  █  ", "█████"],
+        "N": ["█   █", "██  █", "█ █ █", "█  ██", "█   █", "█   █"],
     }
-    rows = ["  ".join(font[ch][r] for ch in word) for r in range(6)]
-    w, h, fs, lh = 860, 190, 26, 27
+    rows = [" ".join(font[ch][r] for ch in word) for r in range(6)]
+    w, h, fs, lh = 860, 140, 18, 19
+    cx, top = w // 2, 32
+
     def layer(dx, dy, fill):
         return "".join(
-            f'<text x="{430 + dx}" y="{40 + dy + i * lh}" text-anchor="middle" font-size="{fs}" '
+            f'<text x="{cx + dx}" y="{top + dy + i * lh}" text-anchor="middle" font-size="{fs}" '
             f'font-weight="700" xml:space="preserve" fill="{fill}">{row}</text>' for i, row in enumerate(rows))
     defs = ('<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#39d353"/>'
             '<stop offset="1" stop-color="#6cb6ff"/></linearGradient>')
+    mid = f"{cx} {h // 2}"
     body = (f'<rect width="{w}" height="{h}" fill="{BG}"/>'
-            '<g><animateTransform attributeName="transform" type="rotate" values="-1.5 430 95;1.5 430 95;-1.5 430 95" dur="5s" repeatCount="indefinite"/>'
-            f'{layer(5, 5, "#0d4429")}{layer(0, 0, "url(#g)")}</g>')
+            f'<g><animateTransform attributeName="transform" type="rotate" values="-1 {mid};1 {mid};-1 {mid}" dur="5s" repeatCount="indefinite"/>'
+            f'{layer(3, 3, "#0d4429")}{layer(0, 0, "url(#g)")}</g>')
     return svg_wrap(w, h, body, defs)
 
 

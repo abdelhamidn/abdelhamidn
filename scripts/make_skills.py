@@ -27,9 +27,9 @@ SKILLS = {
         ("Staging Releases", "555555", None), ("Rollback Strategies", "555555", None),
     ],
     "Cloud & Systems": [
-        ("Azure", "0078D4", "microsoftazure"), ("AWS", "232F3E", "amazonaws"), ("GCP", "4285F4", "googlecloud"),
+        ("Azure", "0078D4", "microsoftazure"), ("GCP", "4285F4", "googlecloud"),
         ("OVHcloud", "123F6D", "ovh"), ("Oracle Cloud", "F80000", "oracle"), ("Huawei Cloud", "CF0A2C", "huawei"),
-        ("EKS", "FF9900", "amazonaws"), ("AKS", "0078D4", "microsoftazure"), ("S3", "569A31", "amazons3"),
+        ("AKS", "0078D4", "microsoftazure"), 
         ("Linux", "FCC624", "linux"), ("Sovereign Cloud", "0A66C2", None), ("Multi-cloud", "0A66C2", None),
         ("Cloud Architecture", "0A66C2", None), ("Capacity Planning", "0A66C2", None),
     ],
