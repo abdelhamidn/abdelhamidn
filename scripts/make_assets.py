@@ -19,12 +19,8 @@ def fetch_contributions():
     for m in re.finditer(r'<td[^>]*data-date="([^"]+)" id="contribution-day-component-(\d+)-(\d+)" data-level="(\d)"', html):
         d, row, col, lvl = m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(4))
         cells.append((d, row, col, lvl))
-    tips = dict(re.findall(r'for="(contribution-day-component-\d+-\d+)"[^>]*>([^<]*)', html))
-    total = 0
-    for cid, text in tips.items():
-        m = re.match(r"(\d+) contributions?", text.strip())
-        if m:
-            total += int(m.group(1))
+    m = re.search(r"([\d,]+)\s+contributions?\s+in\s+the\s+last\s+year", html)
+    total = int(m.group(1).replace(",", "")) if m else 0
     return cells, total
 
 
