@@ -124,6 +124,7 @@ def main():
         "assets/prompt-contributions-v2.svg": prompt_svg("./contributions.sh"),
         "assets/prompt-links-v2.svg": prompt_svg("./links.sh"),
         "assets/prompt-skills-v2.svg": prompt_svg("./skills.sh"),
+        "assets/prompt-whoami-v2.svg": prompt_svg("whoami"),
     }
     for path, content in files.items():
         with open(path, "w", encoding="utf-8") as f:
