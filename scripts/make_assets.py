@@ -124,10 +124,10 @@ def main():
         sys.exit("no contribution data fetched")
     files = {
         "assets/contrib-heatmap.svg": heatmap_svg(cells, total),
-        "assets/wordmark.svg": wordmark_svg(),
-        "assets/prompt-contributions.svg": prompt_svg("./contributions.sh"),
-        "assets/prompt-links.svg": prompt_svg("./links.sh"),
-        "assets/prompt-skills.svg": prompt_svg("./skills.sh"),
+        "assets/wordmark-v2.svg": wordmark_svg(),
+        "assets/prompt-contributions-v2.svg": prompt_svg("./contributions.sh"),
+        "assets/prompt-links-v2.svg": prompt_svg("./links.sh"),
+        "assets/prompt-skills-v2.svg": prompt_svg("./skills.sh"),
     }
     for path, content in files.items():
         with open(path, "w", encoding="utf-8") as f:

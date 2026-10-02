@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/wordmark.svg" alt="ABDELHAMIDN" width="100%"/>
+<img src="assets/wordmark-v2.svg" alt="ABDELHAMIDN" width="100%"/>
 
 <h3>Cloud &amp; DevOps Project Manager | R&amp;D AI-Oriented Software Engineer</h3>
 
@@ -8,10 +8,10 @@
 
 <br/><br/>
 
-<img src="assets/prompt-contributions.svg" alt="abdelhamidn@github ~ $ ./contributions.sh" width="100%"/>
+<img src="assets/prompt-contributions-v2.svg" alt="abdelhamidn@github ~ $ ./contributions.sh" width="100%"/>
 <img src="assets/contrib-heatmap.svg" alt="Contribution heatmap"/>
 
-<img src="assets/prompt-links.svg" alt="abdelhamidn@github ~ $ ./links.sh" width="100%"/>
+<img src="assets/prompt-links-v2.svg" alt="abdelhamidn@github ~ $ ./links.sh" width="100%"/>
 
 <a href="https://abdelhamid.noira.net"><img src="https://img.shields.io/badge/PORTFOLIO-ABDELHAMID.NOIRA.NET-1a73e8?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
 <a href="https://linkedin.com/in/abdelhamidn"><img src="https://img.shields.io/badge/LINKEDIN-ABDELHAMIDN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
@@ -24,7 +24,7 @@
 
 <div align="center">
 
-<img src="assets/prompt-skills.svg" alt="abdelhamidn@github ~ $ ./skills.sh" width="100%"/>
+<img src="assets/prompt-skills-v2.svg" alt="abdelhamidn@github ~ $ ./skills.sh" width="100%"/>
 
 <!-- SKILLS:START -->
 **Team & Project Management**<br/>
